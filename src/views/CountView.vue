@@ -1,19 +1,18 @@
 <template>
   <div class="count">
-    카운트: {{ count }}
+    카운트: {{ count.count }}
     <div class="button-container">
-      <button class="red" @click="add">더하기</button>
-      <button class="light-blue" @click="subtract">빼기</button>
+      <button class="red" @click="count.increment">더하기</button>
+      <button class="light-blue" @click="count.decrement">빼기</button>
+      <button class="gray" @click="count.reset">초기화</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import useCount from "../hooks/useCount";
 
-const count = ref(0);
-const add = () => count.value++;
-const subtract = () => count.value--;
+const count = useCount(0);
 </script>
 
 <style scoped lang="scss">
@@ -39,7 +38,7 @@ const subtract = () => count.value--;
   justify-content: space-around;
 
   button {
-    width: 100px;
+    width: 25%;
     height: 55px;
     color: black;
     font-weight: bold;
