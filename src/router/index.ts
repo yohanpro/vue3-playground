@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import MyView from "../pages/my/index.vue";
 import MyDetailView from "../pages/my/detail/index.vue";
+import CountView from "../views/CountView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -17,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+  },
+  {
+    path: "/count",
+    name: "count",
+    component: () => import("../views/CountView.vue"),
   },
   {
     path: "/my",
