@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import MyView from "../pages/my/index.vue";
 import MyDetailView from "../pages/my/detail/index.vue";
-import CountView from "../views/CountView.vue";
+import MyClass from "@pages/class/index.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/my/:id",
     name: "myDetail",
     component: MyDetailView,
+  },
+  {
+    path: "/class",
+    name: "class",
+    component: MyClass,
   },
 ];
 
